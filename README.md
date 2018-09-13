@@ -11,14 +11,24 @@ activities due to the different stimuli. Therefore, the multidimensional scaling
 
 ## Data
 
-You can download the data using the following command from 
+You can download the data using the following command from the package fMRIdata
 
-''
-setwd( dir = "/some/path/")
+``
+install.packages("fMRIdata")
+library(fMRIdata)
+``
 
-download.file( url = "https://github.com/angeella/mds_fMRI/blob/readme-edits/dati_fmri_sub1.zip", destfile = "dati_fmri_sub1.zip" )
-unzip( zipfile = "meetingsR-master.zip" )                                 
-''
+fMRIdata contains 5 lists, one for each subject: sub1, sub2, sub3, sub4, sub5. In order to load the first subject
+
+``
+data(sub1)
+``
+This list contains 12 matrices, one for each run. You can see the first run of the first subject as
+
+``
+sub1_run_X[[1]]
+``
+
 ## Multidimensional Scaling 
 
 
