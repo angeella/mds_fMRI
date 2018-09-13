@@ -9,11 +9,24 @@ chairs, scissors, shoes, and faces were used. For more details, please see the [
 The aim is to represent the brain activities described by voxels in two dimensions, discovering some clusters that correspond to the brain
 activities due to the different stimuli. Therefore, the multidimensional scaling techniques is applied.
 
-In order to simply the analysis, you can download the data as
+## Data
+
+You can download the data using the following command from 
 
 ''
+setwd( dir = "/some/path/")
 
+download.file( url = "https://github.com/angeella/mds_fMRI/blob/readme-edits/dati_fmri_sub1.zip", destfile = "dati_fmri_sub1.zip" )
+unzip( zipfile = "meetingsR-master.zip" )                                 
 ''
+## Multidimensional Scaling 
+
+
+## Individual Differences Scaling (INDSCAL) 
+
+
+## Some diagnostics
+
 
 
 ![mds](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png)
