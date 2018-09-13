@@ -2,5 +2,5 @@
 Multidimensional scaling using fMRI data
 
 
-![mds](readme-edits/mds.png)
+![mds](https://github.com/angeella/mds_fMRI/readme-edits/mds.png)
 
