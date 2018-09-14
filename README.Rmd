@@ -1,0 +1,16 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+This package was created in order to provide useful fMRI datasets. The data comes from the website OpenfMRI. It contains 5 lists, one for each subject analyzed. Each list contains 12 matrices, one for each runs. For example:
+
