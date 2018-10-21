@@ -114,11 +114,11 @@ Finally, we applied metric multidimensional scaling INDSCAL to these 5 matrices 
 ```r
 ind_fmri <- smacofIndDiff(dist_all, type = "mspline",spline.intKnots = 50,itmax = 1000,spline.degree = 5,ndim = 2)
 ```
-In Figure \ref{plot_INDSCAL} we can observe the similarities between brain activities due to different stimuli between individuals. It is noted that the individual 2 reacted similarly to the individual 5 regarding to the individual 3. This output saws the similarity spaces across 5 subjects. Homogeneities between subjects and/or any outliers could be noted. 
+In Figure \ref{plot_INDSCAL} we can observe the similarities between brain activities due to different stimuli between individuals. It is noted that the individual $2$ reacted similarly to the individual $5$ regarding to the individual $3$. This output saws the similarity spaces across $5$ subjects. Homogeneities between subjects and/or any outliers could be noted. 
 
-The following plot represents the weights of each subject for the creation of the common space plot. We can note that subject 3 is more involved in the creation of the second dimension than in the first dimension, instead, the reverse situation is found for subjects 2 and 5. 
+The following plot represents the weights of each subject for the creation of the common space plot. We can note that subject $3$ is more involved in the creation of the second dimension than in the first dimension, instead, the reverse situation is found for subjects $2$ and $5$. 
 
-![plot_INDSCAL_ind](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png)
+![plot_INDSCAL_ind](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.pdf)
 
 thanks to the following code
 
@@ -126,7 +126,6 @@ thanks to the following code
 plot(ind_fmri$gspace[, 1], ind_fmri$gspace[, 2],type = "p",cex=1,pch=20,col="blue",ylim = c(min(ind_fmri$gspace[, 2]),max(ind_fmri$gspace[, 2])*1.4),main = "INDSCAL Configuration",xlab = "First dimension",ylab = "Second dimension")
 text(ind_fmri$gspace[, 1], ind_fmri$gspace[, 2],pos=3,labels = c(1:12),col="blue",cex=0.85)
 ```
-
 The following plot indicates, also, the (dis)similarity calculated for each run across all individuals. We can see that the brain activities detected during the first run are far from the brain activities of the other runs. 
 
 ![plot_INDSCAL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL.png)
