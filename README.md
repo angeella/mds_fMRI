@@ -1,4 +1,5 @@
 # mds_fMRI
+### Multidimensional scaling having fMRI data
 
 In this repository, you can find:
 
