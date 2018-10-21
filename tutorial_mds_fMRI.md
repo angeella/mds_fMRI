@@ -47,7 +47,7 @@ legend('topright', col=cols, legend=levels(as.factor(mds1[,3])),pch=18, cex = 0.
 ```
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png" width="750px" height="500px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png" width="450px" height="300px"/>
 </p>
 
 We can see that the multidimensional scaling technique permits to represent this heavy matrix into two-dimensional space, also, we can see that are some clusters.
@@ -73,7 +73,7 @@ ggplot(PC_fmri,aes(x=PC1,y=PC2,color=label_mds1)) +
 ```
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.png" width="750px" height="500px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.png" width="400px" height="300px"/>
 </p>
 
 Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In the following plot, we represent the original distances versus the distances obtained from the configurations of multidimensional scaling.
@@ -89,7 +89,7 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
 ```
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png" width="750px" height="500px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png" width="400px" height="300px"/>
 </p>
 
 ## Individual Differences Scaling (INDSCAL) 
@@ -126,7 +126,7 @@ We can observe the similarities between brain activities due to different stimul
 The following plot represents the weights of each subject for the creation of the common space plot. We can note that subject $3$ is more involved in the creation of the second dimension than in the first dimension, instead, the reverse situation is found for subjects $2$ and $5$. 
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png" width="750px" height="500px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png" width="400px" height="300px"/>
 </p>
 
 thanks to the following code
@@ -138,7 +138,7 @@ text(ind_fmri$gspace[, 1], ind_fmri$gspace[, 2],pos=3,labels = c(1:12),col="blue
 The following plot indicates, also, the (dis)similarity calculated for each run across all individuals. We can see that the brain activities detected during the first run are far from the brain activities of the other runs. 
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL.png" width="750px" height="500px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL.png" width="400px" height="300px"/>
 </p>
 
 Below, the code used 
