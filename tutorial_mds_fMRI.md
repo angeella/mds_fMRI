@@ -1,14 +1,14 @@
 # Multidimensional scaling using fMRI data
 
 ## Introduction
-In this tutorial, the aim is to show a simple application of multidimensional scaling techniques using fMRI data. You can download the dataset, used as example, from the [OpenfMRI](https://openfmri.org/dataset/ds000105/) website that provides free access to neuroimaging data sets. This dataset contains a set of fMRI scans for 5 subjects. Each subject has $12$ runs, and each run is composed by 121 scans.  During each of the 121 scans, an individual is subjected to a 24-seconds stimuli followed by a 12-seconds pause. The stimulus consists on the visualization of certain objects, people, or animals images.
+In this tutorial, the aim is to show a simple application of multidimensional scaling techniques using fMRI data. You can download the dataset, used as example, from the [OpenfMRI](https://openfmri.org/dataset/ds000105/) website that provides free access to neuroimaging data sets. This dataset contains a set of fMRI scans for $5$ subjects. Each subject has $12$ runs, and each run is composed by $121$ scans.  During each of the 121 scans, an individual is subjected to a $24$-seconds stimuli followed by a $12$-seconds pause. The stimulus consists on the visualization of certain objects, people, or animals images.
 In this experiment, 8 different categories of grey-scale images of houses, cats, bottles, nonsense patterns, chairs, scissors, shoes, and faces were used. For more details, please see the [OpenfMRI](https://openfmri.org/dataset/ds000105/) website.
 
 The aim is to represent the brain activities described by voxels in two dimensions, discovering some clusters that correspond to the brain activities due to the different stimuli. Therefore, the multidimensional scaling techniques is applied.
 
 ## Data
 
-You can download directly the data described previously from this [link](https://drive.google.com/open?id=1BDRSflkdmO2XrTPqutwDTtMQ5G26i6nL). It is an .Rdata file containing the data about the first subject. It is a list of $12$ numeric elements, one for each run. Each element is a matrix with dimension $(40 x 64 x 64) x 121$, where the rows represent the number of voxels and the columns the number of scans. 
+You can download directly the data described previously from this [link](https://drive.google.com/open?id=1BDRSflkdmO2XrTPqutwDTtMQ5G26i6nL). It is an .Rdata file containing the data about the first subject. It is a list of $12$ numeric elements, one for each run. Each element is a matrix with dimension $(40 \times 64 \times 64) \times 121$, where the rows represent the number of voxels and the columns the number of scans. 
 
 So, after all you must download the rData:
 
@@ -26,7 +26,7 @@ label_mds1 <- c(rep("scissors",12),rep("faces",12),rep("cats",12), rep("shoes",1
 
 ## Multidimensional Scaling 
 
-The <a href="https://www.codecogs.com/eqnedit.php?latex=$X^\top&space;X$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$X^\top&space;X$" title="$X^\top X$" /></a> matrix, with dimension 120 x 120 was constructed after centring the matrix X. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the \textbf{vegan} package:
+The $X^\top X$ matrix, with dimension 120 x 120 was constructed after centring the matrix X. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the \textbf{vegan} package:
 
 ```r
 sub1_run1_dist_eu <-vegdist(decostand(sub1_run1_XX1,method = "standardize"),method = "euclidean")
