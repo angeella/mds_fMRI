@@ -47,7 +47,7 @@ legend('topright', col=cols, legend=levels(as.factor(mds1[,3])),pch=18, cex = 0.
 ```
 
 <p align="center">
-![mds](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png)
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png" width="750px" height="300px"/>
 </p>
 
 We can see that the multidimensional scaling technique permits to represent this heavy matrix into two-dimensional space, also, we can see that are some clusters.
