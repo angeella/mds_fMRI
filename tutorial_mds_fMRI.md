@@ -56,7 +56,7 @@ Another important aspect, that we analyzed, is how the brain activities represen
 
 The previous figure represents the same plot for the run $3$, $6$, $9$ and $12$ of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
 
-We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the principal component analysis as we can see in Figure \ref{plot_sub1_run1_pca}. Below, the code used to do the principal component analysis:
+We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the principal component analysis. Below, the code used to do the principal component analysis:
 
 ```r
 pca <-prcomp(sub1_run1_XX1,center = TRUE,scale. = TRUE)
@@ -114,7 +114,7 @@ Finally, we applied metric multidimensional scaling INDSCAL to these 5 matrices 
 ```r
 ind_fmri <- smacofIndDiff(dist_all, type = "mspline",spline.intKnots = 50,itmax = 1000,spline.degree = 5,ndim = 2)
 ```
-In Figure \ref{plot_INDSCAL} we can observe the similarities between brain activities due to different stimuli between individuals. It is noted that the individual $2$ reacted similarly to the individual $5$ regarding to the individual $3$. This output saws the similarity spaces across $5$ subjects. Homogeneities between subjects and/or any outliers could be noted. 
+We can observe the similarities between brain activities due to different stimuli between individuals. It is noted that the individual $2$ reacted similarly to the individual $5$ regarding to the individual $3$. This output saws the similarity spaces across $5$ subjects. Homogeneities between subjects and/or any outliers could be noted. 
 
 The following plot represents the weights of each subject for the creation of the common space plot. We can note that subject $3$ is more involved in the creation of the second dimension than in the first dimension, instead, the reverse situation is found for subjects $2$ and $5$. 
 
