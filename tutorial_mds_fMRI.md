@@ -47,7 +47,7 @@ legend('topright', col=cols, legend=levels(as.factor(mds1[,3])),pch=18, cex = 0.
 ```
 
 <p align="center">
-<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png" width="750px" height="300px"/>
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png" width="750px" height="500px"/>
 </p>
 
 We can see that the multidimensional scaling technique permits to represent this heavy matrix into two-dimensional space, also, we can see that are some clusters.
@@ -56,7 +56,7 @@ We can note, also, that the brain activities given by animate objects, as faces 
 Another important aspect, that we analyzed, is how the brain activities representations change across runs. Therefore, we have applied the procedure just explained for each run of the first subject, thus we have $12$ $2$-dimensional representations of our data.
 
 <p align="center">
-![plot_sub1_runALL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.png)
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.png" width="750px" height="500px"/>
 </p>
 
 The previous figure represents the same plot for the run $3$, $6$, $9$ and $12$ of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
@@ -72,7 +72,9 @@ ggplot(PC_fmri,aes(x=PC1,y=PC2,color=label_mds1)) +
   scale_x_reverse() + scale_colour_manual(values = cols)
 ```
 
-![plot_sub1_run1_pca](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.png)
+<p align="center">
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.png" width="750px" height="500px"/>
+</p>
 
 Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In the following plot, we represent the original distances versus the distances obtained from the configurations of multidimensional scaling.
 
@@ -86,8 +88,9 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
   xlab("Original distance") + ylab("Mds distance")
 ```
 
-![diagnosticplot_sub1_run1](https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png)
-
+<p align="center">
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png" width="750px" height="500px"/>
+</p>
 
 ## Individual Differences Scaling (INDSCAL) 
 
@@ -122,7 +125,9 @@ We can observe the similarities between brain activities due to different stimul
 
 The following plot represents the weights of each subject for the creation of the common space plot. We can note that subject $3$ is more involved in the creation of the second dimension than in the first dimension, instead, the reverse situation is found for subjects $2$ and $5$. 
 
-![plot_INDSCAL_ind](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png)
+<p align="center">
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png" width="750px" height="500px"/>
+</p>
 
 thanks to the following code
 
@@ -132,7 +137,9 @@ text(ind_fmri$gspace[, 1], ind_fmri$gspace[, 2],pos=3,labels = c(1:12),col="blue
 ```
 The following plot indicates, also, the (dis)similarity calculated for each run across all individuals. We can see that the brain activities detected during the first run are far from the brain activities of the other runs. 
 
-![plot_INDSCAL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL.png)
+<p align="center">
+<img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL.png" width="750px" height="500px"/>
+</p>
 
 Below, the code used 
 
