@@ -45,14 +45,19 @@ points(mds1[,1],mds1[,2], col = cols[as.factor(mds1[,3])], pch = 18)
 points(centroids[,2:3], col = cols[as.factor(centroids[,1])], pch = 17,cex=2)
 legend('topright', col=cols, legend=levels(as.factor(mds1[,3])),pch=18, cex = 0.7)
 ```
+
+<p align="center">
 ![mds](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds.png)
+</p>
 
 We can see that the multidimensional scaling technique permits to represent this heavy matrix into two-dimensional space, also, we can see that are some clusters.
 All brain activities given by a particular category of stimulus are represented by closer points, for example, all brain activities due to viewing a house are plotted in the same cluster. Then, the y-axis can describe the stimulus categories and the x-axis the various scans applied. It is a very useful plot that summarizes our multidimensional data.
 We can note, also, that the brain activities given by animate objects, as faces and cats, are closer together with respect to inanimate objects, as bottles, scissors and so, but to test this aspect we need more computation that is outside of this project.
 Another important aspect, that we analyzed, is how the brain activities representations change across runs. Therefore, we have applied the procedure just explained for each run of the first subject, thus we have $12$ $2$-dimensional representations of our data.
 
+<p align="center">
 ![plot_sub1_runALL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.png)
+</p>
 
 The previous figure represents the same plot for the run $3$, $6$, $9$ and $12$ of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
 
@@ -75,7 +80,6 @@ Finally, we want to see how much, by reducing the dimensionality of our data, th
 distOR<-dist(sub1_run1_dist_eu)
 distMDS <- dist(mds[,1:2])
 dist_plot<-as.data.frame(cbind(distMDS,distOR))
-#pdf("C:/Users/acer/Dropbox/Project AMT/proposal/diagnosticplot_sub1_run1.pdf")
 ggplot(dist_plot,aes(x=distOR,y=distMDS))+
   geom_point(size=3) + geom_smooth(method = "lm", se = FALSE)+
   labs(title = "Original distance vs mds configuration distance") +
@@ -148,7 +152,9 @@ text(sub5_w[1,1],sub5_w[2,2],labels = "5",cex = 1)
 
 ## Conclusions
 
-
+Functional Magnetic Resonance Imaging provides us a tool to analyze brain activity of one or more subjects during some stimuli. We noted that multidimensional scaling technique is a powerful method to understand this type of complex data. Thanks to it, we noted that activity pattern due to a particular category of stimulus is represented in two-dimensional as a cluster. We noted, also, that this approach is equivalent to principal component analysis. Analysing different runs on the same subject, we noted that these clusters get worst across runs, it can be due to a decrease in the individual's attention to the experiment. The power of multidimensional scaling technique was used in the analysis of (dis)similarity of individuals, thanks to the INDSCAL algorithm. In this part, we noted a homogeneity of brain activity across some individuals, as individual 2 and individual 5, and a dis-homogeneity across other individuals,
+as individual 5 and 3. As a further analysis, we can apply this method to understand (dis)similarity between healthy subjects
+and patients, such as people suffering from Alzheimer, bipolarity or schizophrenia disease. If we have some outliers in our two dimensional representation, we can probably refer it to the disease.
 
 
     
