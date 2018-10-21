@@ -79,7 +79,7 @@ ggplot(PC_fmri,aes(x=PC1,y=PC2,color=label_mds1)) +
   scale_x_reverse() + scale_colour_manual(values = cols)
 ```
 
-![mds2](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds2.png)
+![mds2](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.pdf)
 
 Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In Figure \ref{mds3} we represent the original distances versus the distances obtained from the congurations of multidimensional scaling.
 
