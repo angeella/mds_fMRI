@@ -82,7 +82,7 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
   xlab("Original distance") + ylab("Mds distance")
 ```
 
-![diagnosticplot_sub1_run1](https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png)
+![diagnosticplot_sub1_run1](https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.pdf)
 
 
 ## Individual Differences Scaling (INDSCAL) 
