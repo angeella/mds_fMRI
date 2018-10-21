@@ -26,7 +26,7 @@ label_mds1 <- c(rep("scissors",12),rep("faces",12),rep("cats",12), rep("shoes",1
 
 ## Multidimensional Scaling 
 
-The $X^\top X$ matrix, with dimension $120 \times 120$ was constructed after centring the matrix $X$. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the vegan package:
+The <a href="https://www.codecogs.com/eqnedit.php?latex=$X^\top&space;X$" target="_blank"><img src="https://latex.codecogs.com/gif.latex?$X^\top&space;X$" title="$X^\top X$" /></a> matrix, with dimension 120 x 120 was constructed after centring the matrix X. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the \textbf{vegan} package:
 
 ```r
 sub1_run1_dist_eu <-vegdist(decostand(sub1_run1_XX1,method = "standardize"),method = "euclidean")
@@ -36,19 +36,7 @@ mds1$V1<-as.numeric(as.character(mds1$V1))
 mds1$V2<-as.numeric(as.character(mds1$V2))
 centroids <- aggregate(cbind(V1,V2)~label_mds1,mds1,mean)
 ```
-
-and then, we plot the eulidean distances and the corresponding centroids calculated:
-
-```r
-sub1_run1_dist_eu <-vegdist(decostand(sub1_run1_XX1,method = "standardize"),method = "euclidean")
-mds <- cmdscale(sub1_run1_dist_eu)
-mds1<-as.data.frame(cbind(mds,label_mds1))
-mds1$V1<-as.numeric(as.character(mds1$V1))
-mds1$V2<-as.numeric(as.character(mds1$V2))
-centroids <- aggregate(cbind(V1,V2)~label_mds1,mds1,mean)
-```
-
-giving the following plot:
+and then, we plot the eulidean distances and the corresponding centroids computed:
 
 ```r
 cols = c('red', 'blue', 'black', 'steelblue', 'green', 'pink','orange','yellow','brown')
@@ -64,11 +52,11 @@ All brain activities given by a particular category of stimulus are represented 
 We can note, also, that the brain activities given by animate objects, as faces and cats, are closer together with respect to inanimate objects, as bottles, scissors and so, but to test this aspect we need more computation that is outside of this project.
 Another important aspect, that we analyzed, is how the brain activities representations change across runs. Therefore, we have applied the procedure just explained for each run of the first subject, thus we have 12 2-dimensional representations of our data.
 
-![mds1](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds1.png)
+![plot_sub1_runALL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.pdf)
 
-Figure \ref{mds1} represents the same plot, as \ref{mds}, for the run 3, 6, 9 and 12 of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
+Figure \ref{plot_sub1_runALL} represents the same plot, as \ref{mds}, for the run 3, 6, 9 and 12 of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
 
-We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the principal component analysis as we can see in Figure \ref{mds2}. Below, the code used to do the principal component analysis:
+We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the \textbf{principal component analysis} as we can see in Figure \ref{plot_sub1_run1_pca}. Below, the code used to do the principal component analysis:
 
 ```r
 pca <-prcomp(sub1_run1_XX1,center = TRUE,scale. = TRUE)
@@ -79,9 +67,9 @@ ggplot(PC_fmri,aes(x=PC1,y=PC2,color=label_mds1)) +
   scale_x_reverse() + scale_colour_manual(values = cols)
 ```
 
-![mds2](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.pdf)
+![plot_sub1_run1_pca](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.pdf)
 
-Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In Figure \ref{mds3} we represent the original distances versus the distances obtained from the congurations of multidimensional scaling.
+Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In Figure \ref{diagnosticplot_sub1_run1} we represent the original distances versus the distances obtained from the configurations of multidimensional scaling.
 
 ```r
 distOR<-dist(sub1_run1_dist_eu)
@@ -94,7 +82,7 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
   xlab("Original distance") + ylab("Mds distance")
 ```
 
-![mds3](https://github.com/angeella/mds_fMRI/blob/readme-edits/mds2.png)
+![diagnosticplot_sub1_run1](https://github.com/angeella/mds_fMRI/blob/readme-edits/diagnosticplot_sub1_run1.png)
 
 
 ## Individual Differences Scaling (INDSCAL) 
