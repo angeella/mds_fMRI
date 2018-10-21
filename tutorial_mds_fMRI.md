@@ -26,7 +26,7 @@ label_mds1 <- c(rep("scissors",12),rep("faces",12),rep("cats",12), rep("shoes",1
 
 ## Multidimensional Scaling 
 
-The $\bm{X}^\top \bm{X}$ matrix, with dimension $120 \times 120$ was constructed after centring the matrix $\bm{X}$. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the vegan package:
+The $X^\top X$ matrix, with dimension $120 \times 120$ was constructed after centring the matrix $X$. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the vegan package:
 
 ```r
 sub1_run1_dist_eu <-vegdist(decostand(sub1_run1_XX1,method = "standardize"),method = "euclidean")
@@ -52,11 +52,11 @@ All brain activities given by a particular category of stimulus are represented 
 We can note, also, that the brain activities given by animate objects, as faces and cats, are closer together with respect to inanimate objects, as bottles, scissors and so, but to test this aspect we need more computation that is outside of this project.
 Another important aspect, that we analyzed, is how the brain activities representations change across runs. Therefore, we have applied the procedure just explained for each run of the first subject, thus we have $12$ $2$-dimensional representations of our data.
 
-![plot_sub1_runALL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.pdf){#plot_sub1_runALL}
+![plot_sub1_runALL](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.pdf)
 
-Figure @plot_sub1_runALL represents the same plot, as @mds, for the run 3, 6, 9 and 12 of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
+The previous figure represents the same plot for the run $3$, $6$, $9$ and $12$ of the first subject. We can note something strange, across the time the division of cluster gets worse, this may be due to a decrease in the attention of the subject in looking at the proposed stimuli run after run. 
 
-We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the \textbf{principal component analysis} as we can see in Figure \ref{plot_sub1_run1_pca}. Below, the code used to do the principal component analysis:
+We must note, also, that this method of multidimensional scaling applied refers to classical multidimensional scaling that provides the same results coming from the principal component analysis as we can see in Figure \ref{plot_sub1_run1_pca}. Below, the code used to do the principal component analysis:
 
 ```r
 pca <-prcomp(sub1_run1_XX1,center = TRUE,scale. = TRUE)
@@ -69,7 +69,7 @@ ggplot(PC_fmri,aes(x=PC1,y=PC2,color=label_mds1)) +
 
 ![plot_sub1_run1_pca](https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_run1_pca.pdf)
 
-Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In Figure \ref{diagnosticplot_sub1_run1} we represent the original distances versus the distances obtained from the configurations of multidimensional scaling.
+Finally, we want to see how much, by reducing the dimensionality of our data, the multidimensional scaling preserves the distances. In the following plot, we represent the original distances versus the distances obtained from the configurations of multidimensional scaling.
 
 ```r
 distOR<-dist(sub1_run1_dist_eu)
