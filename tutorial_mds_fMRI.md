@@ -8,7 +8,7 @@ The aim is to represent the **brain activities** described by voxels in two dime
 
 ## Data
 
-You can download directly the data described previously from this [link](https://drive.google.com/open?id=1BDRSflkdmO2XrTPqutwDTtMQ5G26i6nL). You will find $5$ .Rdata files, one for each subject analyzed. 
+You can download directly the data described previously from this [link](https://drive.google.com/open?id=1DceMW-cUf-c3j3jA3Djh8oIL2bhM8U-z). You will find $5$ .Rdata files, one for each subject analyzed. 
 Each .Rdata file is a list of $12$ numeric elements, one for each run. Each element is a matrix with dimension $(40 \times 64 \times 64) \times 121$, where the rows represent the number of voxels and the columns the number of scans.  For more details about the data preprocessing, please send me an email (angelaDOTandreellaATstatDOTunipdDOTit).
 
 So, first of all, you must download the libraries and the .rData files:
@@ -100,7 +100,7 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
 
 In this second part, the data of all $5$ individuals across $12$ runs are analyzed. Individual proximity matrices are aggregated into a single analysis thanks to the INDSCAL algorithm developed on the **SMACOF** (Scaling by MAjorizing a COmplicated Function) package. 
 
-At first, we created the $12$ matrices $X^\topX$, one for each run, considering the first subject:
+At first, we created the $12$ matrices $X^TX$, one for each run, considering the first subject:
 
 ```r
 sub1_covariance <- list()
