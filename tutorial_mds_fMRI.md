@@ -9,7 +9,7 @@ The aim is to represent the **brain activities** described by voxels in two dime
 ## Data
 
 You can download directly the data described previously from this [link](https://drive.google.com/open?id=1DceMW-cUf-c3j3jA3Djh8oIL2bhM8U-z). You will find 5 .Rdata files, one for each subject analyzed. 
-Each .Rdata file is a list of 12 numeric elements, one for each run. Each element is a matrix with dimension $(40 \times 64 \times 64) \times 121$, where the rows represent the number of voxels and the columns the number of scans.  For more details about the data preprocessing, please send me an email (angelaDOTandreellaATstatDOTunipdDOTit).
+Each .Rdata file is a list of 12 numeric elements, one for each run. Each element is a matrix with dimension $ (40 \times 64 \times 64) \times 121 $, where the rows represent the number of voxels and the columns the number of scans.  For more details about the data preprocessing, please send me an email (angelaDOTandreellaATstatDOTunipdDOTit).
 
 So, first of all, you must download the libraries and the .rData files:
 
