@@ -32,7 +32,7 @@ the object sub1_run1_XX1 is our $ X $ matrix. Then, we are ready to apply the mu
 
 ## Multidimensional Scaling 
 
-The $X^\top X$ matrix, with dimension $120 \times 120$ was constructed after centering the matrix $X$. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the **vegan** package:
+The $ X^\top X $ matrix, with dimension $ 120 \times 120 $ was constructed after centering the matrix $ X $. The matrix of Euclidean distances was calculated and classical multidimensional scaling was applied, thanks to the **vegan** package:
 
 ```r
 sub1_run1_dist_eu <-vegdist(decostand(sub1_run1_XX1,method = "standardize"),method = "euclidean") #euclidean distance
@@ -57,7 +57,7 @@ legend('topright', col=cols, legend=levels(as.factor(mds1[,3])),pch=18, cex = 0.
 We can see that the multidimensional scaling technique permits to represent this heavy matrix into two-dimensional space, also, we can see that are some clusters.
 All brain activities given by a particular category of stimulus are represented in the same cluster. Then, the y-axis can describe the stimulus categories and the x-axis the various scans applied. It is a very useful plot that summarizes our multidimensional data.
 We can note, also, that the brain activities given by animate objects, as faces and cats, are closer together compared to inanimate objects, like bottles, scissors and so, but to test this aspect we need more computation that is outside of this simple tutorial.
-Another important aspect is how the representation of brain activity changes across runs. Therefore, we have applied the procedure just explained considering the runs $3$, $6$, $9$ and $12$ of the first subject:
+Another important aspect is how the representation of brain activity changes across runs. Therefore, we have applied the procedure just explained considering the runs 3, 6, 9 and 12 of the first subject:
 
 <p align="center">
 <img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_sub1_runALL.png" width="750px" height="500px"/>
@@ -98,9 +98,9 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
 
 ## Individual Differences Scaling (INDSCAL) 
 
-In this second part, the data of all $5$ individuals across $12$ runs are analyzed. Individual proximity matrices are aggregated into a single analysis thanks to the INDSCAL algorithm developed on the **SMACOF** (Scaling by MAjorizing a COmplicated Function) package. 
+In this second part, the data of all 5 individuals across $12$ runs are analyzed. Individual proximity matrices are aggregated into a single analysis thanks to the INDSCAL algorithm developed on the **SMACOF** (Scaling by MAjorizing a COmplicated Function) package. 
 
-At first, we created the $12$ matrices $X^TX$, one for each run, considering the first subject:
+At first, we created the 12 matrices $ X^TX $, one for each run, considering the first subject:
 
 ```r
 sub1_covariance <- list()
@@ -110,19 +110,19 @@ for (i in 1:nrun){
 }
 ```
 
-Then, we calculate the matrix **Riemann distance** between these $12$ covariances:
+Then, we calculate the matrix **Riemann distance** between these 12 covariances:
 
 ```r
 distR_1 <- outer(seq_along(sub1_covariance), seq_along(sub1_covariance), 
                  FUN= Vectorize(function(i,j) distcov(sub1_covariance[[i]], sub1_covariance[[j]],method = "Riemannian")))
 ```
-We redo these steps for all subjects, so, we will have $5$ objects saved into the distr_all list:
+We redo these steps for all subjects, so, we will have 5 objects saved into the distr_all list:
 
 ```r
 dist_all <- list(distR_1, distR_2, distR_3, distR_4, distR_5)
 ```
 
-Finally, we applied metric multidimensional scaling **INDSCAL** to these $5$ matrices of dissimilarity:
+Finally, we applied metric multidimensional scaling **INDSCAL** to these 5 matrices of dissimilarity:
 
 ```r
 ind_fmri <- smacofIndDiff(dist_all, type = "mspline",spline.intKnots = 50,itmax = 1000,spline.degree = 5,ndim = 2)
@@ -148,9 +148,9 @@ text(sub5_w[1,1],sub5_w[2,2],labels = "5",cex = 1)
 <img src="https://github.com/angeella/mds_fMRI/blob/readme-edits/plot_INDSCAL_ind.png" width="400px" height="300px"/>
 </p>
 
-This plot represents the similarities between brain activities of different individuals, a similarity space across $5$ subjects. So, the individual $2$ reacted similarly to the individual $5$ but he/she is different from the individual $3$. Then, homogeneities between subjects and/or any outliers could be noted.
+This plot represents the similarities between brain activities of different individuals, a similarity space across 5 subjects. So, the individual 2 reacted similarly to the individual 5 but he/she is different from the individual 3. Then, homogeneities between subjects and/or any outliers could be noted.
 
-Therefore, this plot represents the weights of each subject into the common space plot. So, the subject $3$ has a greater weight into the second dimension than the first dimension, instead, the reverse situation is found considering the subjects $2$ and $5$. 
+Therefore, this plot represents the weights of each subject into the common space plot. So, the subject 3 has a greater weight into the second dimension than the first dimension, instead, the reverse situation is found considering the subjects 2 and 5. 
 
 Thanks to the following code:
 
