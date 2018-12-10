@@ -98,7 +98,7 @@ ggplot(dist_plot,aes(x=distOR,y=distMDS))+
 
 ## Individual Differences Scaling (INDSCAL) 
 
-In this second part, the data of all 5 individuals across $12$ runs are analyzed. Individual proximity matrices are aggregated into a single analysis thanks to the INDSCAL algorithm developed on the **SMACOF** (Scaling by MAjorizing a COmplicated Function) package. 
+In this second part, the data of all 5 individuals across 12 runs are analyzed. Individual proximity matrices are aggregated into a single analysis thanks to the INDSCAL algorithm developed on the **SMACOF** (Scaling by MAjorizing a COmplicated Function) package. 
 
 At first, we created the 12 matrices $ X^TX $, one for each run, considering the first subject:
 
